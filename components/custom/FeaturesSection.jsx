@@ -1,4 +1,5 @@
 import { Code, Sparkles, Wand2, Layers } from "lucide-react";
+import Colors from '@/data/Colors';
 
 const features = [
   {
@@ -25,15 +26,15 @@ const features = [
 
 export default function FeaturesSection() {
   return (
-    <section className="w-full py-20 bg-[#0A0E17] border-t border-[#1F2937]">
+    <section className="w-full py-20" style={{ background: Colors.BACKGROUND, borderTop: `1px solid ${Colors.BORDER}` }}>
       <div className="max-w-6xl mx-auto px-6 flex flex-col items-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-[#F1F5F9] text-center">Features</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center" style={{ color: Colors.TEXT }}>Features</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 w-full">
           {features.map((f, i) => (
-            <div key={i} className="flex flex-col items-center bg-[#111827] rounded-2xl p-8 shadow-lg h-full">
-              <f.icon className="h-12 w-12 text-[#3B82F6] mb-4" />
-              <h3 className="text-xl font-semibold mb-2 text-[#F1F5F9] text-center">{f.title}</h3>
-              <p className="text-[#94A3B8] text-center text-base">{f.desc}</p>
+            <div key={i} className="flex flex-col items-center rounded-2xl p-8 shadow-lg h-full" style={{ background: Colors.SURFACE }}>
+              <f.icon className="h-12 w-12 mb-4" style={{ color: Colors.PRIMARY }} />
+              <h3 className="text-xl font-semibold mb-2 text-center" style={{ color: Colors.TEXT }}>{f.title}</h3>
+              <p className="text-center text-base" style={{ color: Colors.TEXT_MUTED }}>{f.desc}</p>
             </div>
           ))}
         </div>

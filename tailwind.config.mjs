@@ -64,6 +64,18 @@ export default {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		maxWidth: {
+  			container: "1280px",
+  		},
+  		animation: {
+  			marquee: 'marquee var(--duration) linear infinite',
+  		},
+  		keyframes: {
+  			marquee: {
+  				'0%': { transform: 'translateX(0)' },
+  				'100%': { transform: 'translateX(calc(-100% - var(--gap)))' }
+  			}
   		}
   	}
   },

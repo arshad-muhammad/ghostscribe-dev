@@ -1,3 +1,5 @@
+import Colors from '@/data/Colors';
+
 const testimonials = [
   {
     name: "Alex Kim",
@@ -18,19 +20,20 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="w-full py-20 bg-[#0A0E17] border-t border-[#1F2937]">
+    <section className="w-full py-20" style={{ background: Colors.BACKGROUND, borderTop: `1px solid ${Colors.BORDER}` }}>
       <div className="max-w-5xl mx-auto px-6 flex flex-col items-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-[#F1F5F9] text-center">What developers are saying</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center" style={{ color: Colors.TEXT }}>What developers are saying</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
           {testimonials.map((t, i) => (
-            <div key={i} className="flex flex-col items-center bg-[#111827] rounded-2xl p-8 shadow-lg h-full">
+            <div key={i} className="flex flex-col items-center rounded-2xl p-8 shadow-lg h-full" style={{ background: Colors.SURFACE }}>
               <img
                 src={t.avatar}
                 alt={t.name}
-                className="w-16 h-16 rounded-full mb-4 border-2 border-[#3B82F6] object-cover"
+                className="w-16 h-16 rounded-full mb-4 border-2 object-cover"
+                style={{ borderColor: Colors.PRIMARY }}
               />
-              <blockquote className="text-[#94A3B8] italic mb-4 text-center">“{t.quote}”</blockquote>
-              <div className="text-[#EAB308] font-semibold">{t.name}</div>
+              <blockquote className="italic mb-4 text-center" style={{ color: Colors.TEXT_MUTED }}>“{t.quote}”</blockquote>
+              <div className="font-semibold" style={{ color: Colors.HIGHLIGHT }}>{t.name}</div>
             </div>
           ))}
         </div>

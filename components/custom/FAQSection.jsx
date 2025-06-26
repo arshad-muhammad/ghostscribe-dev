@@ -1,3 +1,7 @@
+// This file has been replaced by the new testimonials marquee section in /components/ui/testimonials-with-marquee.tsx
+
+import Colors from '@/data/Colors';
+
 const faqs = [
   {
     q: "What is GhostScribe?",
@@ -19,14 +23,14 @@ const faqs = [
 
 export default function FAQSection() {
   return (
-    <section className="w-full py-20 bg-[#0A0E17] border-t border-[#1F2937]">
+    <section className="w-full py-20" style={{ background: Colors.BACKGROUND, borderTop: `1px solid ${Colors.BORDER}` }}>
       <div className="max-w-3xl mx-auto px-6 flex flex-col items-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-[#F1F5F9] text-center">FAQ</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center" style={{ color: Colors.TEXT }}>FAQ</h2>
         <div className="w-full space-y-6">
           {faqs.map((faq, i) => (
-            <div key={i} className="bg-[#111827] rounded-2xl p-6 shadow flex flex-col">
-              <div className="text-lg font-semibold text-[#3B82F6] mb-2">{faq.q}</div>
-              <div className="text-[#94A3B8] text-base">{faq.a}</div>
+            <div key={i} className="rounded-2xl p-6 shadow flex flex-col" style={{ background: Colors.SURFACE }}>
+              <div className="text-lg font-semibold mb-2" style={{ color: Colors.PRIMARY }}>{faq.q}</div>
+              <div className="text-base" style={{ color: Colors.TEXT_MUTED }}>{faq.a}</div>
             </div>
           ))}
         </div>
