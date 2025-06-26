@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { SparklesCore } from "@/components/ui/sparkles";
+import { Faq5 } from "@/components/ui/faq-5";
 import { TestimonialsSection } from "@/components/ui/testimonials-with-marquee"
 
 export function SparklesPreview() {
@@ -82,6 +83,12 @@ export function SparklesPreviewColorful() {
   );
 }
 
+const DemoOne = () => {
+  return (
+    <Faq5 />
+  );
+};
+
 const testimonials = [
   {
     author: {
@@ -119,4 +126,6 @@ export function TestimonialsSectionDemo() {
       testimonials={testimonials}
     />
   )
-} 
+}
+
+export { DemoOne }; 
